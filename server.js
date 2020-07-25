@@ -5,6 +5,8 @@ const io = require('socket.io')(server)
 const { v4: uuidv4 } = require('uuid')
 const cors = require('cors')
 
+const port = process.env.PORT || 3000
+
 app.use(cors())
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -28,5 +30,5 @@ io.on('connection', (socket) => {
 	})
 })
 
-server.listen('https://zoom-video-call.herokuapp.com/')
+server.listen(port)
 //https://zoom-video-call.herokuapp.com/
